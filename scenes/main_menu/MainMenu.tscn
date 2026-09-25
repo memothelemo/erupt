@@ -3,6 +3,7 @@
 [ext_resource type="LabelSettings" uid="uid://d3ylv45y2f8qe" path="res://assets/ui/main_menu/title.tres" id="1_isws5"]
 [ext_resource type="Script" uid="uid://crjspdnnqxcg1" path="res://scenes/main_menu/SceneMainMenu.gd" id="1_xr86y"]
 [ext_resource type="LabelSettings" uid="uid://di8e83vmg8k6b" path="res://assets/ui/main_menu/instruction_to_start.tres" id="2_axelx"]
+[ext_resource type="StyleBox" uid="uid://bb3040unsjxwt" path="res://assets/ui/background.tres" id="2_qmweu"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 resource_name = "RESET"
@@ -51,9 +52,10 @@ autoplay = &"flash"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=884173615]
 
-[node name="Background" type="Panel" parent="CanvasLayer" unique_id=1790374475]
+[node name="Background" type="Panel" parent="CanvasLayer" unique_id=1270422643]
 offset_right = 1000.0
 offset_bottom = 600.0
+theme_override_styles/panel = ExtResource("2_qmweu")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1262329399]
 offset_right = 1000.0

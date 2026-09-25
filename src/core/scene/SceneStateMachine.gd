@@ -12,10 +12,7 @@ func _ready() -> void:
 	super._ready()
 
 	# Require initial scene state to set
-	assert(
-		self._get_initial_state() != null,
-		"%s: initial state must be set" % self.name
-	)
+	assert(self._get_initial_state() != null, "%s: initial state must be set" % self.name)
 
 func _is_valid_state(node: BaseState) -> bool:
 	if node is not StatefulScene: return false
@@ -54,7 +51,7 @@ func _exit_state(node: BaseState) -> void:
 	if is_instance_valid(state._scene):
 		# Detach the scene out of the machine.
 		state._scene.get_parent().remove_child(state._scene)
-		
+
 		# Dispose the scene if that scene allow the machine to do so.
 		if state._should_reset_scene():
 			state._scene.queue_free()

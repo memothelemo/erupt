@@ -9,5 +9,6 @@ gradient = SubResource("Gradient_uocie")
 [node name="Paddle" type="CharacterBody2D" unique_id=1048028882]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=487887525]
-scale = Vector2(1.5, 0.125)
+position = Vector2(1.9073486e-06, 0)
+scale = Vector2(1.6562501, 0.125)
 texture = SubResource("GradientTexture2D_57vk6")
