@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://d3ylv45y2f8qe"]
+
+[ext_resource type="FontFile" uid="uid://bmdrcdu5t7rw0" path="res://assets/fonts/PixelifySans.ttf" id="1_fbmxf"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_fbmxf")
+font_size = 107

@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://di8e83vmg8k6b"]
+
+[ext_resource type="FontFile" uid="uid://cebq2lhvc58uh" path="res://assets/fonts/GeistPixel.ttf" id="1_0ms11"]
+
+[resource]
+font = ExtResource("1_0ms11")
+font_size = 32

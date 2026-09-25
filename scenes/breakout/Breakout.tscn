@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ch0pjwbc18waa"]
+
+[ext_resource type="Script" uid="uid://bbk6p3h4qlrpp" path="res://scenes/breakout/SceneBreakout.gd" id="1_mjnfu"]
+[ext_resource type="PackedScene" uid="uid://cxrs7v41x5lap" path="res://src/entities/paddle.tscn" id="1_o6xyp"]
+
+[node name="Breakout" type="Node2D" unique_id=1488633031]
+script = ExtResource("1_mjnfu")
+
+[node name="Paddle" parent="." unique_id=1048028882 instance=ExtResource("1_o6xyp")]
+position = Vector2(501, 530)

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://8wgmgarnfx5s"]
+
+[ext_resource type="Script" uid="uid://hr2x7compt6h" path="res://src/core/scene/SceneStateMachine.gd" id="1_y1inj"]
+[ext_resource type="Script" uid="uid://cw0rbn3dlv0pc" path="res://src/core/scene/StatefulScene.gd" id="2_6sk48"]
+[ext_resource type="PackedScene" uid="uid://ch0pjwbc18waa" path="res://scenes/breakout/Breakout.tscn" id="3_keclr"]
+[ext_resource type="PackedScene" uid="uid://dr1lslinble6q" path="res://scenes/main_menu/MainMenu.tscn" id="4_a3ru1"]
+
+[node name="GameMaster" type="Node2D" unique_id=1084884914]
+
+[node name="SceneStateMachine" type="Node" parent="." unique_id=535625535 node_paths=PackedStringArray("initial_scene")]
+script = ExtResource("1_y1inj")
+initial_scene = NodePath("MainMenu")
+
+[node name="Breakout" type="Node" parent="SceneStateMachine" unique_id=166542896]
+script = ExtResource("2_6sk48")
+resource = ExtResource("3_keclr")
+
+[node name="MainMenu" type="Node" parent="SceneStateMachine" unique_id=1331729501]
+script = ExtResource("2_6sk48")
+resource = ExtResource("4_a3ru1")
