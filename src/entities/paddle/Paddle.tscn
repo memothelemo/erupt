@@ -6,9 +6,15 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_57vk6"]
 gradient = SubResource("Gradient_uocie")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57vk6"]
+size = Vector2(106, 8)
+
 [node name="Paddle" type="CharacterBody2D" unique_id=1048028882]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=487887525]
 position = Vector2(1.9073486e-06, 0)
 scale = Vector2(1.6562501, 0.125)
 texture = SubResource("GradientTexture2D_57vk6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=338589814]
+shape = SubResource("RectangleShape2D_57vk6")
