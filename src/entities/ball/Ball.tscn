@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://j70o88gwt55c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ball"]
+friction = 0.0
+bounce = 0.0
+
+[sub_resource type="Gradient" id="Gradient_fh5bh"]
+offsets = PackedFloat32Array(0, 0.70913464, 0.7139423, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fh5bh"]
+gradient = SubResource("Gradient_fh5bh")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57vk6"]
+
+[node name="Ball" type="RigidBody2D" unique_id=293522078]
+physics_material_override = SubResource("PhysicsMaterial_ball")
+gravity_scale = 0.0
+lock_rotation = true
+custom_integrator = true
+max_contacts_reported = 8
+continuous_cd = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1131907543]
+scale = Vector2(0.29882813, 0.29882813)
+texture = SubResource("GradientTexture2D_fh5bh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665709042]
+shape = SubResource("CircleShape2D_57vk6")
