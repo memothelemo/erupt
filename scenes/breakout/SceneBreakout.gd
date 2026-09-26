@@ -20,5 +20,5 @@ func _move_paddle(pixels_dt: int) -> void:
 	)
 
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("move_left", "move_right")
 	if direction != 0: self._move_paddle(direction * self.paddle.speed * delta)
