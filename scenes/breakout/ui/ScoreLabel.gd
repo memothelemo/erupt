@@ -3,8 +3,8 @@ extends Label
 @onready var scene: SceneBreakout = $"../../../"
 
 func _ready() -> void:
-	scene.score_changed.connect(_update_score_text.bind(self))
-	_update_score_text(scene.score)
+	self.scene.score_changed.connect(self._update_score_text)
+	self._update_score_text(self.scene.score)
 
-func _update_score_text(new_score: int):
+func _update_score_text(new_score: int) -> void:
 	self.text = str(new_score)

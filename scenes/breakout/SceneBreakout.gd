@@ -7,8 +7,14 @@ extends StatefulScene
 @onready var score: int = 0
 
 ## Calls every time when a player gains points to their score.
-@warning_ignore("unused_signal")
 signal score_changed(new_score: int)
+
+func _ready() -> void:
+	$Bricks.brick_destroyed.connect(self._on_brick_destroyed)
+
+func _on_brick_destroyed(points: int) -> void:
+	self.score += points
+	self.score_changed.emit(self.score)
 
 func _on_state_entered() -> void:
 	begin_sfx.play()

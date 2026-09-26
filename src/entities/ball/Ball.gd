@@ -69,6 +69,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		# Only reflect when travelling into the surface, not away from it.
 		if direction.dot(normal) < 0: direction = direction.bounce(normal)
 
+		var collider = state.get_contact_collider_object(contact)
+		if collider is Brick:
+			# Remove the brick after the physics callback has finished.
+			collider.hit.call_deferred()
+
 	# Preserve our upward-positive angle convention after the reflection.
 	self.angle = atan2(-direction.y, direction.x)
 	state.linear_velocity = direction * self.speed

@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://cxucoxvv6xd07" path="res://scenes/breakout/ui/ScoreLabel.gd" id="6_4frm5"]
 [ext_resource type="PackedScene" uid="uid://j70o88gwt55c" path="res://src/entities/ball/Ball.tscn" id="7_4tb2v"]
 [ext_resource type="Script" uid="uid://bt2ma630ijyw3" path="res://src/entities/ball/Ball.gd" id="8_t8san"]
+[ext_resource type="PackedScene" uid="uid://c6dofdx2rkx24" path="res://src/entities/brick/Brick.tscn" id="10_jiiq5"]
+[ext_resource type="Script" uid="uid://5gtcqvhm2uff" path="res://scenes/breakout/Bricks.gd" id="11_bricks"]
 
 [node name="Breakout" type="Node2D" unique_id=1488633031]
 script = ExtResource("1_mjnfu")
@@ -51,3 +53,7 @@ script = ExtResource("6_4frm5")
 position = Vector2(501, 474)
 freeze = true
 script = ExtResource("8_t8san")
+
+[node name="Bricks" type="Node2D" parent="." unique_id=591418967]
+script = ExtResource("11_bricks")
+brick_scene = ExtResource("10_jiiq5")
