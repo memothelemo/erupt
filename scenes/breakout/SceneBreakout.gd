@@ -1,7 +1,11 @@
 class_name SceneBreakout
-extends Node2D
+extends StatefulScene
 
 @onready var paddle: Paddle = $Paddle
+@onready var begin_sfx: AudioStreamPlayer2D = $Begin
+
+func _on_state_entered() -> void:
+	begin_sfx.play()
 
 func _move_paddle(pixels_dt: int) -> void:
 	var actual_size = self.paddle.get_actual_size()

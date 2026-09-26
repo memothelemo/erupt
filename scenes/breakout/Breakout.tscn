@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bbk6p3h4qlrpp" path="res://scenes/breakout/SceneBreakout.gd" id="1_mjnfu"]
 [ext_resource type="PackedScene" uid="uid://cxrs7v41x5lap" path="res://src/entities/paddle/Paddle.tscn" id="1_o6xyp"]
 [ext_resource type="Script" uid="uid://bg6ufkjoaohlh" path="res://src/entities/paddle/Paddle.gd" id="3_baxow"]
+[ext_resource type="AudioStream" uid="uid://b3chuyfrgcmwh" path="res://assets/sfx/begin.ogg" id="4_ad7re"]
 
 [node name="Breakout" type="Node2D" unique_id=1488633031]
 script = ExtResource("1_mjnfu")
@@ -10,3 +11,6 @@ script = ExtResource("1_mjnfu")
 [node name="Paddle" parent="." unique_id=1048028882 instance=ExtResource("1_o6xyp")]
 position = Vector2(501, 530)
 script = ExtResource("3_baxow")
+
+[node name="Begin" type="AudioStreamPlayer2D" parent="." unique_id=524100258]
+stream = ExtResource("4_ad7re")

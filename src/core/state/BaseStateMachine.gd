@@ -42,13 +42,13 @@ func _get_initial_state() -> BaseState: return initial_state
 func _start_machine() -> void:
 	if not self.is_inside_tree(): return
 
-	var state := self.initial_state
+	var state := self._get_initial_state()
 	if state != null and not self._transition_to(state):
 		push_warning("%s: could not transition to initial state" % self.name)
 
 func _transition_to(state: BaseState) -> bool:
 	if not is_instance_valid(state) or state.is_queued_for_deletion(): return false
-	if state.get_parent() != self or self.states.get(state.name) != state: return false
+	if not self._is_registered_state(state): return false
 	if not self._is_valid_state(state): return false
 	if state == self.current_state: return true
 
@@ -79,7 +79,7 @@ func _on_transition_requested(state: StringName, source: BaseState) -> void:
 	# A delayed request must still come from the active registered state.
 	if not is_instance_valid(source) or source != self.current_state: return
 
-	var loaded_state = self.states.get(state)
+	var loaded_state = self._get_state(state)
 	if loaded_state == null:
 		push_warning("%s: tried to request transition to an unknown state (%s)" % [self.name, state])
 		return
@@ -93,3 +93,9 @@ func _on_transition_requested(state: StringName, source: BaseState) -> void:
 ## By default, it sets to `true` for `BaseStateMachine`.
 func _is_valid_state(_state: BaseState) -> bool:
 	return true
+
+func _is_registered_state(state: BaseState) -> bool:
+	return state.get_parent() == self and self.states.get(state.name) == state
+
+func _get_state(state: StringName) -> BaseState:
+	return self.states.get(state)
